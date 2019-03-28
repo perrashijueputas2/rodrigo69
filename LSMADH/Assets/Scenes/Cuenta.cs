@@ -4,10 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Cuenta : MonoBehaviour {
     string titular;
-    int dinero;
-    
+    double dinero;
     string vacio;
-    //int DiasDesdeRegistro = Random.Range(0, 2000);
     void Start()
     {
         
@@ -19,22 +17,6 @@ public class Cuenta : MonoBehaviour {
     void Update()
     {
     }
-    public void CuentaAnterior()
-    {
-        Debug.Log("la cuenta anterior fue " + titular + ", y su saldo es " + dinero);
-
-    }
-    public void LimpiarCuenta()
-    {
-        Nombre.text = "";
-        
-    }
-    public void GuardarEnAlmacen()
-    {
-
-    }
-   
-
     public string GetTitular()
     {
         return titular;
@@ -43,25 +25,36 @@ public class Cuenta : MonoBehaviour {
     {
         this.titular = Titular;
     }
-    public int GetCantidad()
+    public double GetDinero()
     {
         return dinero;
     }
-    public void SetCantidad(int Cantidad)
+    public void SetDinero(float Dinero)
     {
-        this.dinero = Cantidad;
+        this.dinero = Dinero;
     }
 
     public void Ingresar(double _cantidad)
     {
         if (_cantidad > 0)
         {
-            dinero += (int)_cantidad;
+            dinero += (float)_cantidad;
         }
     }
     public void Retirar(double _cantidad)
     {
-        //int cantidad - _cantidad = cantidad;
-    }
+        if (_cantidad<0)
+        {
 
+        }
+    }
+    public Cuenta(string _titular, double _saldo)
+    {
+        titular = _titular;
+        dinero = _saldo;
+    }
+    public Cuenta(string _titular)
+    {
+        titular = _titular;
+    }
 }

@@ -2,59 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Cuenta : MonoBehaviour {
-    string titular;
-    double dinero;
-    string vacio;
-    void Start()
-    {
-        
 
-        //public float temporal = System.Convert.ToSingle()
-    }
-
-
-    void Update()
-    {
-    }
-    public string GetTitular()
-    {
-        return titular;
-    }
-    public void SetTitular(string Titular)
-    {
-        this.titular = Titular;
-    }
-    public double GetDinero()
-    {
-        return dinero;
-    }
-    public void SetDinero(float Dinero)
-    {
-        this.dinero = Dinero;
-    }
-
-    public void Ingresar(double _cantidad)
-    {
-        if (_cantidad > 0)
-        {
-            dinero += (float)_cantidad;
-        }
-    }
-    public void Retirar(double _cantidad)
-    {
-        if (_cantidad<0)
-        {
-
-        }
-    }
-    public Cuenta(string _titular, double _saldo)
-    {
-        titular = _titular;
-        dinero = _saldo;
-    }
-    public Cuenta(string _titular)
-    {
-        titular = _titular;
-    }
-}
+//public class Cuenta
+//{
+    
+//    private double saldo;
+//    private string titular;
+//    public double GetSaldo()
+//    {
+//        return saldo;
+//    }
+//    public void SetSaldo(double _saldo)
+//    {
+//        this.saldo = _saldo;
+//    }
+//    public string GetTitular()
+//    {
+//        return titular;
+//    }
+//    public void SetTitular(string _titular)
+//    {
+//        this.titular = _titular;
+//    }
+//    public void Ingresar(double _valorAingresar)
+//    {
+//        if (saldo > 0)
+//        {
+//            Debug.Log("este es el nuevo saldo " + saldo);
+//        }
+//    }
+//    public void Retirar(double _valorARetirar)
+//    {
+//        Debug.Log("solo pudiste retirar " + saldo);
+//        Debug.Log("retiraste " + " y te quedó " + saldo + " en tu cuenta");
+//        saldo = 0;
+//    }
+//    public Cuenta(string _nombre, double _saldo)
+//    {
+//        this.saldo = _saldo;
+//        this.titular = _nombre;
+//    }
+//    public Cuenta(string _nombre)
+//    {
+//        this.titular = _nombre;
+//    }
+//}

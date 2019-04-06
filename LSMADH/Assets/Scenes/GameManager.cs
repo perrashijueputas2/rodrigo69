@@ -10,11 +10,14 @@ public class GameManager : MonoBehaviour
     public Button MostrarCuentaAnterior;
     public Button GuardarCuenta;
     public Button Buscar;
+    public Button Consignar;
+    public Button Retirar;
+    public InputField ValorACambiar;
     int count;
     public Text Guia;
     public Text MostrarDatos;
     public InputField BuscadorCuenta;
-    Cuenta[] cuentas = new Cuenta[2];
+    Cuenta[] cuentas = new Cuenta[3];
     private void Start()
     {
         count = 0;
@@ -47,7 +50,8 @@ public class GameManager : MonoBehaviour
     }
     public void BuscarCuenta()
     {
-        Cuenta ct = cuentas[System.Convert.ToInt32(BuscadorCuenta)];
-        MostrarDatos.text = "Titular: "+ct.GetTitular() +"       Saldo: "+ ct.GetSaldo();
+        
+        Cuenta ct = cuentas[System.Convert.ToInt32(BuscadorCuenta.text)];
+        MostrarDatos.text = "Titular: "+ct.GetTitular() +"        Saldo: "+ ct.GetSaldo();
     }
 }

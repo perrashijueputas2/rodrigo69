@@ -24,12 +24,9 @@ public class Cuenta
     {
         this.titular = _titular;
     }
-    public void Ingresar(double _valorAingresar)
+    public void Ingresar(double _valorAIngresar)
     {
-        if (saldo > 0)
-        {
-            Debug.Log("este es el nuevo saldo " + saldo);
-        }
+        //SetSaldo = 
     }
     public void Retirar(double _valorARetirar)
     {

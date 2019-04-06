@@ -9,70 +9,45 @@ public class GameManager : MonoBehaviour
     public InputField Nombre;
     public Button MostrarCuentaAnterior;
     public Button GuardarCuenta;
+    public Button Buscar;
     int count;
+    public Text Guia;
+    public Text MostrarDatos;
+    public InputField BuscadorCuenta;
     Cuenta[] cuentas = new Cuenta[2];
     private void Start()
     {
         count = 0;
-        
+        Guia.text = "Buenas buenas, éste es el creador de cuentas, ingrese nombre del titular y si desea un saldo, de lo contrario presione guardar.";
     }
     private void Update()
     {
-        if (count < cuentas.Length)
-        {
-            
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                Debug.Log("Ingrese la cantidad");
-            }
-            if (Input.GetKeyDown(KeyCode.N))
-            {
-                Debug.Log("Presione guardar cuenta");
-
-            }
-        }
     }
     //strin.isnullorempty
-    public void DecidirGuardado()
+    public void Guardado()
     {
         if (!string.IsNullOrEmpty(Saldo.text))
         {
-            Cuenta micuenta = new Cuenta(Nombre.text, System.Convert.ToDouble(Saldo.text));
-            Debug.Log("La cuenta con saldo ha sido creada");
-            Saludo();
+            Cuenta miCuenta = new Cuenta(Nombre.text, System.Convert.ToDouble(Saldo.text));
+            Guia.text = "La cuenta " + count + " ha sido creada";
+            cuentas[count] = miCuenta;
+            count++;
         }
         else
         {
-            Cuenta micuenta = new Cuenta(Nombre.text);
-            Debug.Log("La cuenta sin saldo ha sido creada");
-            Saludo();
+            Cuenta miCuenta = new Cuenta(Nombre.text);
+            Guia.text = "La cuenta " + count + " ha sido creada";
+            cuentas[count] = miCuenta;
+            count++;
+        }
+        if (count == cuentas.Length)
+        {
+            Guia.text = "se ha creado la ultima cuenta posible";
         }
     }
-    public void Saludo()
+    public void BuscarCuenta()
     {
-        if (count < cuentas.Length)
-        {
-            Debug.Log("Buenas buenas, éste es el creador de cuentas");
-            Debug.Log("Ingrese nombre del titular");
-            Debug.Log("Desea Crear cuenta con saldo? s = si, n = no");
-        }
-        else
-        {
-            Debug.Log("no tenemos capacidad prro :´v");
-        }
-    }
-    public void Main()
-    {
-        
-        
-        //Cuenta miCuenta;
-
-        
-        //else
-        //{
-        //    miCuenta = new Cuenta(nombre);
-        //}
-        //cuentas[count] = miCuenta;
-        //count++;
+        Cuenta ct = cuentas[System.Convert.ToInt32(BuscadorCuenta)];
+        MostrarDatos.text = "Titular: "+ct.GetTitular() +"       Saldo: "+ ct.GetSaldo();
     }
 }

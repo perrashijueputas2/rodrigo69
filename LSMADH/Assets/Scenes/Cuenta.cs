@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Cuenta
 {
-
     private double saldo;
     private string titular;
     public double GetSaldo()
@@ -26,7 +25,7 @@ public class Cuenta
     }
     public void Ingresar(double _valorAIngresar)
     {
-        //SetSaldo = 
+        saldo += _valorAIngresar;
     }
     public void Retirar(double _valorARetirar)
     {

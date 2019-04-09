@@ -54,4 +54,9 @@ public class GameManager : MonoBehaviour
         Cuenta ct = cuentas[System.Convert.ToInt32(BuscadorCuenta.text)];
         MostrarDatos.text = "Titular: "+ct.GetTitular() +"        Saldo: "+ ct.GetSaldo();
     }
+    public void CambiarElSaldito()
+    {
+        Cuenta ct = cuentas[System.Convert.ToInt32(BuscadorCuenta.text)];
+        ct.Ingresar(System.Convert.ToDouble(ValorACambiar.text));
+    }
 }

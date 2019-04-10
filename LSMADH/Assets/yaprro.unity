@@ -610,7 +610,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 395417996}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 202975460}
+        m_MethodName: RetirarEnCuenta
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &395417996
@@ -730,7 +741,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 202975460}
-        m_MethodName: CambiarElSaldito
+        m_MethodName: ConsignarEnCuenta
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1404,7 +1415,7 @@ GameObject:
   - component: {fileID: 919433000}
   - component: {fileID: 919432999}
   m_Layer: 5
-  m_Name: numero buscar
+  m_Name: cuenta a buscar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1470,13 +1481,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 919433000}
   m_TextComponent: {fileID: 1194895921}
   m_Placeholder: {fileID: 1701842481}
-  m_ContentType: 2
+  m_ContentType: 5
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 4
+  m_KeyboardType: 6
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 1
+  m_CharacterValidation: 4
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
@@ -1759,13 +1770,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1168771297}
   m_TextComponent: {fileID: 2122354249}
   m_Placeholder: {fileID: 1370569849}
-  m_ContentType: 0
+  m_ContentType: 9
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 1
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
@@ -2216,13 +2227,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1594139477}
   m_TextComponent: {fileID: 1899547098}
   m_Placeholder: {fileID: 1505986432}
-  m_ContentType: 0
+  m_ContentType: 5
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 6
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 4
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
@@ -2427,7 +2438,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Numero de cuenta a buscar
+  m_Text: nombre de cuenta a buscar
 --- !u!222 &1701842482
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2515,13 +2526,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1839465298}
   m_TextComponent: {fileID: 28184707}
   m_Placeholder: {fileID: 1649840970}
-  m_ContentType: 0
+  m_ContentType: 9
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 1
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:

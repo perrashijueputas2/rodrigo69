@@ -29,9 +29,15 @@ public class Cuenta
     }
     public void Retirar(double _valorARetirar)
     {
-        Debug.Log("solo pudiste retirar " + saldo);
-        Debug.Log("retiraste " + " y te quedó " + saldo + " en tu cuenta");
-        saldo = 0;
+        if (saldo > _valorARetirar)
+        {
+            saldo -= _valorARetirar;
+        }
+        if (saldo < _valorARetirar)
+        {
+            saldo = 0;
+        }
+       
     }
     public Cuenta(string _nombre, double _saldo)
     {

@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public Text Guia;
     public Text MostrarDatos;
     public InputField BuscadorCuenta;
-    Cuenta[] cuentas = new Cuenta[3];
+    List<Cuenta> cuentas = new List<Cuenta>();
     private void Start()
     {
         count = 0;
@@ -31,32 +31,72 @@ public class GameManager : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(Saldo.text))
         {
-            Cuenta miCuenta = new Cuenta(Nombre.text, System.Convert.ToDouble(Saldo.text));
-            Guia.text = "La cuenta " + count + " ha sido creada";
-            cuentas[count] = miCuenta;
-            count++;
+            if (System.Convert.ToInt32( Saldo.text) > 0)
+            {
+                Cuenta miCuenta = new Cuenta(Nombre.text, System.Convert.ToDouble(Saldo.text));
+                Guia.text = "La cuenta" + " ha sido creada";
+                cuentas.Add(miCuenta);
+                count++;
+            }
+            else
+            {
+                Guia.text = "no me jodas con tu cuenta mugrienta";
+            }
         }
         else
         {
             Cuenta miCuenta = new Cuenta(Nombre.text);
             Guia.text = "La cuenta " + count + " ha sido creada";
-            cuentas[count] = miCuenta;
+            cuentas.Add(miCuenta);
             count++;
-        }
-        if (count == cuentas.Length)
-        {
-            Guia.text = "se ha creado la ultima cuenta posible";
         }
     }
     public void BuscarCuenta()
     {
         
-        Cuenta ct = cuentas[System.Convert.ToInt32(BuscadorCuenta.text)];
-        MostrarDatos.text = "Titular: "+ct.GetTitular() +"        Saldo: "+ ct.GetSaldo();
+        foreach (Cuenta cuentica in cuentas)
+        {
+            if (cuentica.GetTitular() == BuscadorCuenta.text)
+            {
+                MostrarDatos.text = "Titular " + cuentica.GetTitular() + "Saldo: " + cuentica.GetSaldo();
+            }
+        }
     }
-    public void CambiarElSaldito()
+    public void ConsignarEnCuenta()
     {
-        Cuenta ct = cuentas[System.Convert.ToInt32(BuscadorCuenta.text)];
-        ct.Ingresar(System.Convert.ToDouble(ValorACambiar.text));
+        foreach (Cuenta cuentica in cuentas)
+        {
+            if (cuentica.GetTitular() == BuscadorCuenta.text)
+            {
+                if (System.Convert.ToDouble(ValorACambiar.text) > 0)
+                {
+                    cuentica.Ingresar(System.Convert.ToDouble(ValorACambiar.text));
+                }
+                else
+                {
+                    Guia.text = "ni lo intentes, prro";
+                }
+                
+            }
+        }
+    }
+    public void RetirarEnCuenta()
+    {
+        foreach (Cuenta cuentica in cuentas)
+        {
+            if (cuentica.GetTitular() == BuscadorCuenta.text)
+            {
+                if (System.Convert.ToDouble(ValorACambiar.text) > 0)
+                {
+                    cuentica.Retirar(System.Convert.ToDouble(ValorACambiar.text));
+
+                }
+                else
+                {
+                    Guia.text = "ni lo intentes, prro";
+                }
+                
+            }
+        }
     }
 }

@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
     public Text Guia;
     public Text MostrarDatos;
     public InputField BuscadorCuenta;
-    List<Cuenta> cuentas = new List<Cuenta>();
+    //List<Cuenta> cuentas = new List<Cuenta>();
+    Dictionary<string, Cuenta> Diccionarioprron = new Dictionary<string, Cuenta>();
     private void Start()
     {
         count = 0;
@@ -33,10 +34,9 @@ public class GameManager : MonoBehaviour
         {
             if (System.Convert.ToInt32( Saldo.text) > 0)
             {
-                Cuenta miCuenta = new Cuenta(Nombre.text, System.Convert.ToDouble(Saldo.text));
+                Cuenta cuentaTemporal = new Cuenta(Nombre.text, System.Convert.ToDouble(Saldo.text));
+                Diccionarioprron.Add(Nombre.text, cuentaTemporal);
                 Guia.text = "La cuenta" + " ha sido creada";
-                cuentas.Add(miCuenta);
-                count++;
             }
             else
             {
@@ -45,58 +45,43 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Cuenta miCuenta = new Cuenta(Nombre.text);
-            Guia.text = "La cuenta " + count + " ha sido creada";
-            cuentas.Add(miCuenta);
+            Cuenta cuentaTemporal = new Cuenta(Nombre.text);
+            Diccionarioprron.Add(Nombre.text, cuentaTemporal);
+            Guia.text = "La cuenta " + " ha sido creada";
             count++;
         }
     }
     public void BuscarCuenta()
     {
-        
-        foreach (Cuenta cuentica in cuentas)
-        {
-            if (cuentica.GetTitular() == BuscadorCuenta.text)
-            {
-                MostrarDatos.text = "Titular " + cuentica.GetTitular() + "Saldo: " + cuentica.GetSaldo();
-            }
-        }
+
+        Cuenta cuentatemp = Diccionarioprron[BuscadorCuenta.text];
+        MostrarDatos.text = "Titular: " + cuentatemp.GetTitular() + "saldo: " + cuentatemp.GetSaldo();
+
     }
     public void ConsignarEnCuenta()
     {
-        foreach (Cuenta cuentica in cuentas)
+        Cuenta cuentatemp = Diccionarioprron[BuscadorCuenta.text];
+        if (System.Convert.ToDouble(ValorACambiar.text) > 0)
         {
-            if (cuentica.GetTitular() == BuscadorCuenta.text)
-            {
-                if (System.Convert.ToDouble(ValorACambiar.text) > 0)
-                {
-                    cuentica.Ingresar(System.Convert.ToDouble(ValorACambiar.text));
-                }
-                else
-                {
-                    Guia.text = "ni lo intentes, prro";
-                }
-                
-            }
+            cuentatemp.Ingresar(System.Convert.ToDouble(ValorACambiar.text));
+
+        }
+        else
+        {
+            Guia.text = "ni lo intentes, prro";
         }
     }
     public void RetirarEnCuenta()
     {
-        foreach (Cuenta cuentica in cuentas)
+        Cuenta cuentatemp = Diccionarioprron[BuscadorCuenta.text];
+        if (System.Convert.ToDouble(ValorACambiar.text) > 0)
         {
-            if (cuentica.GetTitular() == BuscadorCuenta.text)
-            {
-                if (System.Convert.ToDouble(ValorACambiar.text) > 0)
-                {
-                    cuentica.Retirar(System.Convert.ToDouble(ValorACambiar.text));
+            cuentatemp.Retirar(System.Convert.ToDouble(ValorACambiar.text));
 
-                }
-                else
-                {
-                    Guia.text = "ni lo intentes, prro";
-                }
-                
-            }
+        }
+        else
+        {
+            Guia.text = "ni lo intentes, prro";
         }
     }
 }

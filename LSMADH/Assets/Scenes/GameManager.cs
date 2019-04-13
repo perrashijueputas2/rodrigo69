@@ -54,8 +54,16 @@ public class GameManager : MonoBehaviour
     public void BuscarCuenta()
     {
 
-        Cuenta cuentatemp = Diccionarioprron[BuscadorCuenta.text];
-        MostrarDatos.text = "Titular: " + cuentatemp.GetTitular() + "saldo: " + cuentatemp.GetSaldo();
+        if (Diccionarioprron.ContainsKey(BuscadorCuenta.text))
+        {
+            Cuenta cuentatemp = Diccionarioprron[BuscadorCuenta.text];
+            MostrarDatos.text = "Titular: " + cuentatemp.GetTitular() + "saldo: " + cuentatemp.GetSaldo();
+        }
+        else
+        {
+            Debug.Log("esa tal cuenta no existe");
+        }
+  
 
     }
     public void ConsignarEnCuenta()

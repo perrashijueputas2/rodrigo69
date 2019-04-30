@@ -8,10 +8,12 @@ public class Perseguir : MonoBehaviour
     Transform enemyTransform;
     int rangoDeVisión = 10;
     float tiempo;
+    float timer;
     // Start is called before the first frame update
     void Start()
     {
         enemyTransform = this.transform;
+        timer = 5;
     }
 
     // Update is called once per frame
@@ -35,8 +37,19 @@ public class Perseguir : MonoBehaviour
                     Debug.DrawRay(enemyTransform.position + distanciaDelJugador.normalized * 1.01f, distanciaDelJugador.normalized * hit.distance, Color.magenta);
                     if (hit.collider.gameObject.name == "heroe")
                     {
+
+                        Cronometro();
+                        if (timer < 5 && timer > 3)
+                        {
+                            print("kiriku?");
+                        }
+                        if (timer <= 0)
+                        {
+                            print("kiriku, hpta");
+                            
+                        }
                         
-                        print("kiriku");
+                        
                         return true;
                         
                     }
@@ -44,6 +57,10 @@ public class Perseguir : MonoBehaviour
             }
         }
         return false;
+    }
+    void Cronometro()
+    {
+        timer -= Time.deltaTime;
     }
     
 }

@@ -9,18 +9,23 @@ public class Perseguir : MonoBehaviour
     int rangoDeVisión = 10;
     float tiempo;
     float timer;
+    float vueltas;
+    public GameObject heroe;
+    public Vector3 posicionAzar;
+    public float velocidadRotacion =1000f;
     // Start is called before the first frame update
     void Start()
     {
         enemyTransform = this.transform;
         timer = 5;
+        vueltas = 5;
     }
 
     // Update is called once per frame
     void Update()
     {
         Reconocer();
-        
+        girar();
     }
     bool Reconocer()
     {
@@ -34,6 +39,8 @@ public class Perseguir : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(enemyTransform.position + distanciaDelJugador.normalized * 1.01f, distanciaDelJugador.normalized,out hit, Mathf.Infinity))
                 {
+                    
+                    print(timer);
                     Debug.DrawRay(enemyTransform.position + distanciaDelJugador.normalized * 1.01f, distanciaDelJugador.normalized * hit.distance, Color.magenta);
                     if (hit.collider.gameObject.name == "heroe")
                     {
@@ -46,7 +53,9 @@ public class Perseguir : MonoBehaviour
                         if (timer <= 0)
                         {
                             print("kiriku, hpta");
-                            
+                            timer = 5;
+
+
                         }
                         
                         
@@ -61,6 +70,22 @@ public class Perseguir : MonoBehaviour
     void Cronometro()
     {
         timer -= Time.deltaTime;
+    }
+    void girar()
+    {
+        vueltas -= Time.deltaTime;
+        if (vueltas < 1 && vueltas > 0)
+        {
+            posicionAzar.x = Random.Range(100, -100);
+            posicionAzar.y = 0;
+            posicionAzar.z = Random.Range(100, -100);
+            Quaternion rotacion = Quaternion.LookRotation(posicionAzar);
+            transform.rotation = Quaternion.Slerp(this.transform.rotation, rotacion, velocidadRotacion * 0.1f);
+            print("hice vueltas?");
+            vueltas = 5;
+            
+        }
+        print(vueltas);
     }
     
 }

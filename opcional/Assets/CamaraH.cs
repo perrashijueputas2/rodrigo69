@@ -14,28 +14,28 @@ public class CamaraH : MonoBehaviour
     public float rot_x;
     private void Start()
     {
-        controller = GetComponent<CharacterController>();
     }
 
     void Update()
     {
         Movimiento();
-        RotacionCamara();
+        //RotacionCamara();
     }
-    void RotacionCamara()
-    {
-        mouseX += Input.GetAxis("Mouse X");
-        if (invertirMouse)
-        {
-            mouseY += Input.GetAxis("Mouse Y");
-        }
-        else
-        {
-            mouseY -= Input.GetAxis("Mouse Y");
-        }
-        transform.eulerAngles = new Vector3();
-        GetComponent<Camera>().transform.eulerAngles = new Vector3(mouseY, mouseX, 0);
-    }
+    //void RotacionCamara()
+    //{
+    //    GetComponent<Camera>().transform.eulerAngles = new Vector3(mouseY, mouseX, 0);
+    //    mouseX += Input.GetAxis("Mouse X");
+    //    if (invertirMouse)
+    //    {
+    //        mouseY += Input.GetAxis("Mouse Y");
+    //    }
+    //    else
+    //    {
+    //        mouseY -= Input.GetAxis("Mouse Y");
+    //    }
+    //    transform.eulerAngles = new Vector3();
+
+    //}
     public void Movimiento()
     {
         transform.Rotate(0, Input.GetAxis("Mouse X") * rotateSpeed, 0);
@@ -62,6 +62,5 @@ public class CamaraH : MonoBehaviour
 
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         float curSpeed = velocidad * Input.GetAxis("Vertical");
-        controller.SimpleMove(forward * curSpeed);
     }
 }

@@ -40,7 +40,6 @@ public class Perseguir : MonoBehaviour
                 if (Physics.Raycast(enemyTransform.position + distanciaDelJugador.normalized * 1.01f, distanciaDelJugador.normalized,out hit, Mathf.Infinity))
                 {
                     
-                    print(timer);
                     Debug.DrawRay(enemyTransform.position + distanciaDelJugador.normalized * 1.01f, distanciaDelJugador.normalized * hit.distance, Color.magenta);
                     if (hit.collider.gameObject.name == "heroe")
                     {
@@ -85,7 +84,7 @@ public class Perseguir : MonoBehaviour
             vueltas = 5;
             
         }
-        print(vueltas);
+        
     }
     
 }

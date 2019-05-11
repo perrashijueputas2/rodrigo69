@@ -6,9 +6,12 @@ public class MovimientoH : MonoBehaviour
 {
     float velocidad;
     float velocidadNormal;
-   
+    Rigidbody playerRGB;
+    Transform playerTransform;
     void Start()
     {
+        playerRGB = GetComponent<Rigidbody>();
+        playerTransform = transform;
         velocidad = Random.Range(0.1f, 0.5f);
         velocidadNormal = velocidad;
     }
@@ -44,5 +47,12 @@ public class MovimientoH : MonoBehaviour
         }
 
     }
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponentInParent<IInteractuable>() != null)
+        {
+            other.GetComponentInParent<IInteractuable>().Interact();
+        }
+    }
+
 }

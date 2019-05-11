@@ -25,10 +25,20 @@ public class Perseguir : MonoBehaviour
     void Update()
     {
         Reconocer();
-        girar();
     }
     bool Reconocer()
     {
+        vueltas -= Time.deltaTime;
+        if (vueltas < 1 && vueltas > 0)
+        {
+            posicionAzar.x = Random.Range(100, -100);
+            posicionAzar.y = 0;
+            posicionAzar.z = Random.Range(100, -100);
+            Quaternion rotacion = Quaternion.LookRotation(posicionAzar);
+            transform.rotation = Quaternion.Slerp(this.transform.rotation, rotacion, velocidadRotacion * 3f);
+            print("hice vueltas?");
+            vueltas = 5;
+        }
         Vector3 distanciaDelJugador = heroePosición.position - enemyTransform.position;
         float magnitud = distanciaDelJugador.magnitude;
         if (magnitud<rangoDeVisión)
@@ -36,6 +46,7 @@ public class Perseguir : MonoBehaviour
             float productoPunto = Vector3.Dot(enemyTransform.forward, distanciaDelJugador.normalized);
             if (productoPunto >= 0.5)
             {
+                
                 RaycastHit hit;
                 if (Physics.Raycast(enemyTransform.position + distanciaDelJugador.normalized * 1.01f, distanciaDelJugador.normalized,out hit, Mathf.Infinity))
                 {
@@ -43,7 +54,7 @@ public class Perseguir : MonoBehaviour
                     Debug.DrawRay(enemyTransform.position + distanciaDelJugador.normalized * 1.01f, distanciaDelJugador.normalized * hit.distance, Color.magenta);
                     if (hit.collider.gameObject.name == "heroe")
                     {
-
+                        vueltas = 100;
                         Cronometro();
                         if (timer < 5 && timer > 3)
                         {
@@ -53,38 +64,28 @@ public class Perseguir : MonoBehaviour
                         {
                             print("kiriku, hpta");
                             timer = 5;
-
+                            
 
                         }
-                        
                         
                         return true;
                         
                     }
                 }
             }
+            vueltas = 5;
         }
         return false;
+        
     }
     void Cronometro()
     {
         timer -= Time.deltaTime;
     }
-    void girar()
+    bool Girar()
     {
-        vueltas -= Time.deltaTime;
-        if (vueltas < 1 && vueltas > 0)
-        {
-            posicionAzar.x = Random.Range(100, -100);
-            posicionAzar.y = 0;
-            posicionAzar.z = Random.Range(100, -100);
-            Quaternion rotacion = Quaternion.LookRotation(posicionAzar);
-            transform.rotation = Quaternion.Slerp(this.transform.rotation, rotacion, velocidadRotacion * 0.1f);
-            print("hice vueltas?");
-            vueltas = 5;
-            
-        }
-        
+       
+        return false;
     }
     
 }

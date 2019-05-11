@@ -60,9 +60,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CamaraH.cs" />
-    <Compile Include="Assets\MovimientoH.cs" />
-    <Compile Include="Assets\Perseguir.cs" />
+    <Compile Include="Assets\scripts\CamaraH.cs" />
+    <Compile Include="Assets\scripts\IInteractuable.cs" />
+    <Compile Include="Assets\scripts\MovimientoH.cs" />
+    <Compile Include="Assets\scripts\Perseguir.cs" />
+    <Compile Include="Assets\scripts\Puerta.cs" />
+    <None Include="Assets\Haruko\ReadMe.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>J:/1692590/rodrigo69/opcional/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

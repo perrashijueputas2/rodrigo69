@@ -35,7 +35,7 @@ public class Perseguir : MonoBehaviour
             posicionAzar.y = 0;
             posicionAzar.z = Random.Range(100, -100);
             Quaternion rotacion = Quaternion.LookRotation(posicionAzar);
-            transform.rotation = Quaternion.Slerp(this.transform.rotation, rotacion, velocidadRotacion * 3f);
+            transform.rotation = Quaternion.Slerp(this.transform.rotation, rotacion, velocidadRotacion );
             print("hice vueltas?");
             vueltas = 5;
         }

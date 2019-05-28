@@ -1219,8 +1219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e6ed8544619c5459660d3958b6a985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "heroePosici\xF3n": {fileID: 0}
-  heroe: {fileID: 0}
+  "heroePosici\xF3n": {fileID: 907801114}
+  heroe: {fileID: 907801112}
   posicionAzar: {x: 0, y: 0, z: 0}
   velocidadRotacion: 1000
 --- !u!54 &709667904
@@ -1717,8 +1717,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e6ed8544619c5459660d3958b6a985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "heroePosici\xF3n": {fileID: 0}
-  heroe: {fileID: 0}
+  "heroePosici\xF3n": {fileID: 907801114}
+  heroe: {fileID: 907801112}
   posicionAzar: {x: 0, y: 0, z: 0}
   velocidadRotacion: 1000
 --- !u!65 &831006869
@@ -1750,6 +1750,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &907801112 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000013738095950, guid: ceaf6dfd30302cb4a86b9423f1efde72,
+    type: 3}
+  m_PrefabInstance: {fileID: 970986432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &907801114 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4000014078434744, guid: ceaf6dfd30302cb4a86b9423f1efde72,
+    type: 3}
+  m_PrefabInstance: {fileID: 970986432}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &943584254
 GameObject:
   m_ObjectHideFlags: 0
@@ -2401,8 +2413,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e6ed8544619c5459660d3958b6a985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "heroePosici\xF3n": {fileID: 0}
-  heroe: {fileID: 0}
+  "heroePosici\xF3n": {fileID: 907801114}
+  heroe: {fileID: 907801112}
   posicionAzar: {x: 0, y: 0, z: 0}
   velocidadRotacion: 1
 --- !u!1 &1371847345
@@ -2612,8 +2624,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e6ed8544619c5459660d3958b6a985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "heroePosici\xF3n": {fileID: 0}
-  heroe: {fileID: 0}
+  "heroePosici\xF3n": {fileID: 907801114}
+  heroe: {fileID: 907801112}
   posicionAzar: {x: 0, y: 0, z: 0}
   velocidadRotacion: 1000
 --- !u!1 &1696022000 stripped
@@ -2634,8 +2646,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e6ed8544619c5459660d3958b6a985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "heroePosici\xF3n": {fileID: 0}
-  heroe: {fileID: 0}
+  "heroePosici\xF3n": {fileID: 907801114}
+  heroe: {fileID: 907801112}
   posicionAzar: {x: 0, y: 0, z: 0}
   velocidadRotacion: 1000
 --- !u!54 &1696022004
@@ -2680,11 +2692,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7e4357e7c7f329142b2a4e83c381dcae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.173054
+      value: 42.64
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7e4357e7c7f329142b2a4e83c381dcae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.26999998
+      value: 0.156
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7e4357e7c7f329142b2a4e83c381dcae, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2734,6 +2746,30 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 7e4357e7c7f329142b2a4e83c381dcae, type: 3}
+      propertyPath: m_AABB.m_Center.x
+      value: -0.017
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 7e4357e7c7f329142b2a4e83c381dcae, type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 7e4357e7c7f329142b2a4e83c381dcae, type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: 0.0029780958
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 7e4357e7c7f329142b2a4e83c381dcae, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 7e4357e7c7f329142b2a4e83c381dcae, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.015754944
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 7e4357e7c7f329142b2a4e83c381dcae, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 0.02
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e4357e7c7f329142b2a4e83c381dcae, type: 3}
 --- !u!1 &1701078966 stripped
@@ -2754,8 +2790,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e6ed8544619c5459660d3958b6a985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "heroePosici\xF3n": {fileID: 0}
-  heroe: {fileID: 0}
+  "heroePosici\xF3n": {fileID: 907801114}
+  heroe: {fileID: 907801112}
   posicionAzar: {x: 0, y: 0, z: 0}
   velocidadRotacion: 1000
 --- !u!65 &1701078968
@@ -2769,8 +2805,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.36364317, y: 0.42570686, z: 0.3350644}
-  m_Center: {x: 0.037410975, y: 0.16835272, z: 0.026465893}
+  m_Size: {x: 0.27123928, y: 0.42570686, z: 0.22417116}
+  m_Center: {x: 0.02, y: 0.2, z: 0.019294262}
 --- !u!54 &1701078969
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2785,7 +2821,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!1001 &1752775963
 PrefabInstance:
@@ -2903,8 +2939,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e6ed8544619c5459660d3958b6a985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "heroePosici\xF3n": {fileID: 0}
-  heroe: {fileID: 0}
+  "heroePosici\xF3n": {fileID: 907801114}
+  heroe: {fileID: 907801112}
   posicionAzar: {x: 0, y: 0, z: 0}
   velocidadRotacion: 1000
 --- !u!1 &1838613508

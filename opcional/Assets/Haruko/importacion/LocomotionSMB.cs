@@ -16,6 +16,11 @@ public class LocomotionSMB : StateMachineBehaviour
         animator.SetFloat(m_HashHorizontalParam, input.x, m_Damping, Time.deltaTime);
         animator.SetFloat(m_HashVerticalParam, input.y, m_Damping, Time.deltaTime);
 
+        if ()
+        {
+
+        }
+        animator.speed = 
     }
 
    

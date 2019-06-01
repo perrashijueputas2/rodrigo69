@@ -9,7 +9,8 @@ public class Perseguir : MonoBehaviour
     int rangoDeVisión = 10;
     float tiempo;
     float timer;
-    float vueltas;
+    public float vueltas;
+    public float condicionVueltas;
     public GameObject heroe;
     public Vector3 posicionAzar;
     public float velocidadRotacion =1000f;
@@ -18,7 +19,8 @@ public class Perseguir : MonoBehaviour
     {
         enemyTransform = this.transform;
         timer = 5;
-        vueltas = 5;
+        vueltas = 3;
+        condicionVueltas = 5;
     }
 
     // Update is called once per frame
@@ -28,16 +30,26 @@ public class Perseguir : MonoBehaviour
     }
     bool Reconocer()
     {
+        
         vueltas -= Time.deltaTime;
-        if (vueltas < 1 && vueltas > 0)
+        if (vueltas < 1 )
         {
-            posicionAzar.x = Random.Range(100, -100);
-            posicionAzar.y = 0;
-            posicionAzar.z = Random.Range(100, -100);
-            Quaternion rotacion = Quaternion.LookRotation(posicionAzar);
-            transform.rotation = Quaternion.Slerp(this.transform.rotation, rotacion, velocidadRotacion );
+            condicionVueltas -= Time.deltaTime;
+            //posicionAzar.x = Random.Range(100, -100);
+            //posicionAzar.y = 0;
+            //posicionAzar.z = Random.Range(100, -100);
+            //Quaternion rotacion = Quaternion.LookRotation(posicionAzar);
+            //transform.rotation = Quaternion.Slerp(this.transform.rotation, rotacion, velocidadRotacion);
+            transform.Rotate(new Vector3(0, 15, 0) * Time.deltaTime);
             print("hice vueltas?");
-            vueltas = 5;
+            
+            if (condicionVueltas <1 )
+            {
+                vueltas = 3;
+                condicionVueltas = 5;
+            }
+            
+            
         }
         Vector3 distanciaDelJugador = heroePosición.position - enemyTransform.position;
         float magnitud = distanciaDelJugador.magnitude;
@@ -73,7 +85,7 @@ public class Perseguir : MonoBehaviour
                     }
                 }
             }
-            vueltas = 5;
+            vueltas = 3;
         }
         return false;
         

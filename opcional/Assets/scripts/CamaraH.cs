@@ -19,23 +19,23 @@ public class CamaraH : MonoBehaviour
     void Update()
     {
         Movimiento();
-        //RotacionCamara();
+        RotacionCamara();
     }
-    //void RotacionCamara()
-    //{
-    //    GetComponent<Camera>().transform.eulerAngles = new Vector3(mouseY, mouseX, 0);
-    //    mouseX += Input.GetAxis("Mouse X");
-    //    if (invertirMouse)
-    //    {
-    //        mouseY += Input.GetAxis("Mouse Y");
-    //    }
-    //    else
-    //    {
-    //        mouseY -= Input.GetAxis("Mouse Y");
-    //    }
-    //    transform.eulerAngles = new Vector3();
+    void RotacionCamara()
+    {
+        GetComponent<Camera>().transform.eulerAngles = new Vector3( mouseX, mouseY, 0);
+        mouseX += Input.GetAxis("Mouse X");
+        if (invertirMouse)
+        {
+            mouseY += Input.GetAxis("Mouse Y");
+        }
+        else
+        {
+            mouseY -= Input.GetAxis("Mouse Y");
+        }
+        transform.eulerAngles = new Vector3();
 
-    //}
+    }
     public void Movimiento()
     {
         transform.Rotate(0, Input.GetAxis("Mouse X") * rotateSpeed, 0);

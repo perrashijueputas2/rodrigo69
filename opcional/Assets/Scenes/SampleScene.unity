@@ -727,6 +727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 472904022}
   - component: {fileID: 472904024}
+  - component: {fileID: 472904023}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -741,13 +742,30 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472904021}
-  m_LocalRotation: {x: 0.47401133, y: -0, z: -0, w: 0.88051873}
-  m_LocalPosition: {x: 58.269997, y: 51.52, z: 15.389999}
+  m_LocalRotation: {x: 0.2906187, y: 0, z: 0, w: 0.95683897}
+  m_LocalPosition: {x: 28.71, y: 7.24, z: 70.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 56.59, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 33.79, y: 0, z: 0}
+--- !u!114 &472904023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472904021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60493525c2814c84a8428bd1762b0458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invertirMouse: 0
+  velocidad: 1
+  rotateSpeed: 3
+  cam: {fileID: 472904021}
+  rot_x: 0
 --- !u!20 &472904024
 Camera:
   m_ObjectHideFlags: 0
@@ -1220,6 +1238,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "heroePosici\xF3n": {fileID: 907801114}
+  vueltas: 0
+  condicionVueltas: 0
   heroe: {fileID: 907801112}
   posicionAzar: {x: 0, y: 0, z: 0}
   velocidadRotacion: 1000
@@ -1718,6 +1738,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "heroePosici\xF3n": {fileID: 907801114}
+  vueltas: 0
+  condicionVueltas: 0
   heroe: {fileID: 907801112}
   posicionAzar: {x: 0, y: 0, z: 0}
   velocidadRotacion: 1000
@@ -1866,7 +1888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000014078434744, guid: ceaf6dfd30302cb4a86b9423f1efde72, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.95
+      value: 28.77
       objectReference: {fileID: 0}
     - target: {fileID: 4000014078434744, guid: ceaf6dfd30302cb4a86b9423f1efde72, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1874,7 +1896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000014078434744, guid: ceaf6dfd30302cb4a86b9423f1efde72, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 52.94
+      value: 76.88
       objectReference: {fileID: 0}
     - target: {fileID: 4000014078434744, guid: ceaf6dfd30302cb4a86b9423f1efde72, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2414,6 +2436,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "heroePosici\xF3n": {fileID: 907801114}
+  vueltas: 0
+  condicionVueltas: 0
   heroe: {fileID: 907801112}
   posicionAzar: {x: 0, y: 0, z: 0}
   velocidadRotacion: 1
@@ -2625,6 +2649,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "heroePosici\xF3n": {fileID: 907801114}
+  vueltas: 0
+  condicionVueltas: 0
   heroe: {fileID: 907801112}
   posicionAzar: {x: 0, y: 0, z: 0}
   velocidadRotacion: 1000
@@ -2647,6 +2673,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "heroePosici\xF3n": {fileID: 907801114}
+  vueltas: 0
+  condicionVueltas: 0
   heroe: {fileID: 907801112}
   posicionAzar: {x: 0, y: 0, z: 0}
   velocidadRotacion: 1000
@@ -2791,6 +2819,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "heroePosici\xF3n": {fileID: 907801114}
+  vueltas: 0
+  condicionVueltas: 0
   heroe: {fileID: 907801112}
   posicionAzar: {x: 0, y: 0, z: 0}
   velocidadRotacion: 1000
@@ -2940,6 +2970,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "heroePosici\xF3n": {fileID: 907801114}
+  vueltas: 0
+  condicionVueltas: 0
   heroe: {fileID: 907801112}
   posicionAzar: {x: 0, y: 0, z: 0}
   velocidadRotacion: 1000

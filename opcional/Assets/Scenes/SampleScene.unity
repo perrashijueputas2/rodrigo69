@@ -2138,16 +2138,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a73a53bd8f6974eb125c993237345e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Waypoints:
-  - {fileID: 1918880456}
-  - {fileID: 1048604845}
-  - {fileID: 1077883708}
-  - {fileID: 1856647830}
-  - {fileID: 1160331713}
-  - {fileID: 1791385962}
-  - {fileID: 2016438327}
-  - {fileID: 1958289608}
-  Point: {fileID: 0}
+  goal:
+  - {fileID: 1918880457}
+  - {fileID: 1048604846}
+  - {fileID: 1077883709}
+  - {fileID: 1856647831}
+  - {fileID: 1160331714}
+  - {fileID: 1791385963}
+  - {fileID: 2016438328}
+  - {fileID: 1958289609}
+  actualTarget: 0
 --- !u!114 &1074608032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2157,15 +2157,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1074608029}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23e6ed8544619c5459660d3958b6a985, type: 3}
+  m_Script: {fileID: 11500000, guid: 6538373d45b39ec4e81f8b7a906e706d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   "heroePosici\xF3n": {fileID: 907801114}
-  vueltas: 0
-  condicionVueltas: 0
-  heroe: {fileID: 907801112}
-  posicionAzar: {x: 0, y: 0, z: 0}
-  velocidadRotacion: 1000
 --- !u!65 &1074608033
 BoxCollider:
   m_ObjectHideFlags: 0

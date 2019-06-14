@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ejemplo.cs" />
     <Compile Include="Assets\Scenes\Cuenta.cs" />
     <Compile Include="Assets\Scenes\GameManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">

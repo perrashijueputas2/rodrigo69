@@ -6,9 +6,9 @@ public class Girar : MonoBehaviour
 {
     public Transform heroePosición;
     Transform enemyTransform;
-    int rangoDeVisión = 10;
-    float tiempo;
-    float timer;
+    //int rangoDeVisión = 10;
+    //float tiempo;
+    //float timer;
     public float vueltas;
     public float condicionVueltas;
     public GameObject heroe;
@@ -18,7 +18,7 @@ public class Girar : MonoBehaviour
     void Start()
     {
         enemyTransform = this.transform;
-        timer = 5;
+        //timer = 5;
         vueltas = 3;
         condicionVueltas = 5;
     }

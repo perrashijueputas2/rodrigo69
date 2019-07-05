@@ -94,6 +94,7 @@ public class AudioSystem2D : MonoBehaviour
         else
             muteFX = true;
         
+        
     }
 
     void Update()
